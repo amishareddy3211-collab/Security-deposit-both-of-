@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3 Step Secure Payment</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:sans-serif;background:#0a0a0a;color:#fff}
+.hdr{background:#c70000;padding:10px;text-align:center;font-weight:900;font-size:11px;position:sticky;top:0;z-index:10}
+.steps{display:flex;background:#111}
+.steps div{flex:1;text-align:center;padding:12px;font-size:10px;font-weight:900;color:#666;border-bottom:3px solid #222}
+.steps div.on{color:#fff;border-color:#c70000;background:#1a0a0a}
+.steps div.ok{color:#00ff88;border-color:#00c851;background:#0a1a0a}
+.wrap{max-width:480px;margin:auto;background:#151515;min-height:100vh}
+.top{padding:20px;text-align:center;border-bottom:1px solid #222}
+.box{padding:18px}
+.qr{background:#fff;border-radius:16px;padding:16px;text-align:center}
+.qr img{width:200px;height:200px;border-radius:12px}
+.mini{display:flex;gap:10px;margin-top:10px}
+.mini div{flex:1;background:#0f0f0f;border:1px solid #333;border-radius:12px;padding:10px;display:flex;gap:8px;align-items:center}
+.mini img{width:50px;height:50px;background:#fff;padding:3px;border-radius:8px}
+.pay{display:block;width:100%;padding:15px;border-radius:12px;text-align:center;font-weight:900;margin-top:10px;text-decoration:none;border:none;cursor:pointer;font-size:13px}
+.pay:active{transform:scale(.97)}
+.gpay{background:#fff;color:#000}.phonepe{background:#5f259f;color:#fff}.paytm{background:#00baf2;color:#fff}.any{background:#222;color:#fff;border:1px solid #444}
+.up{border:2px dashed #c70000;background:#1a1010;border-radius:14px;padding:16px;text-align:center;margin-top:16px;cursor:pointer}
+.up img{width:100%;max-height:280px;margin-top:10px;display:none;border-radius:10px;border:1px solid #333}
+.up.show img{display:block}
+.up.show{border-style:solid;border-color:#00c851;background:#0f1f0f}
+.btn{width:100%;padding:17px;background:#c70000;color:#fff;border:none;border-radius:14px;font-weight:900;font-size:15px;margin-top:18px;cursor:pointer}
+.hid{display:none!important}
+</style>
+</head>
+<body>
+<div class="hdr">100% SECURE • AUTO PAYMENT</div>
+<div class="steps"><div id="s1" class="on">STEP 1<br>₹9500</div><div id="s2">STEP 2<br>₹9500</div><div id="s3">DONE ✓</div></div>
+<div class="wrap">
+
+<!-- STEP 1 - SAME COPY -->
+<div id="p1">
+<div class="top"><h2>Step 1: Security Deposit ₹9500</h2><p style="font-size:11px;color:#aaa;margin-top:5px">UPI: kiran9443@ptyes</p></div>
+<div class="box">
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR"><div style="color:#000;font-weight:900;margin-top:8px">kiran9443@ptyes • ₹9500 AUTO</div></div>
+<div class="mini"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=kiran9443@ptyes&am=9500"><span style="font-size:10px">Mini QR<br>Quick Scan</span></div><div style="justify-content:center"><b style="color:#00ff88">₹9500<br>Auto</b></div></div>
+
+<a class="pay gpay" href="upi://pay?pa=kiran9443@ptyes&pn=Signature&am=9500&cu=INR&tn=Step1">📱 Google Pay - Auto ₹9500</a>
+<a class="pay phonepe" href="upi://pay?pa=kiran9443@ptyes&pn=Signature&am=9500&cu=INR&tn=Step1">💜 PhonePe - Auto ₹9500</a>
+<a class="pay paytm" href="upi://pay?pa=kiran9443@ptyes&pn=Signature&am=9500&cu=INR&tn=Step1">💙 Paytm - Auto ₹9500</a>
+<a class="pay any" href="upi://pay?pa=kiran9443@ptyes&pn=Signature&am=9500&cu=INR&tn=Step1">🏦 Any UPI - Auto ₹9500</a>
+
+<div class="up" id="up1" onclick="document.getElementById('f1').click()">
+<input type="file" id="f1" accept="image/*" onchange="preview(this,1)">
+<div id="t1">📤 Upload Screenshot 1<br><small>Click karke upload karo - preview yahi ayega</small></div>
+<img id="img1">
+</div>
+
+<button class="btn" onclick="go(2)">CONTINUE TO STEP 2 →</button>
+</div>
+</div>
+
+<!-- STEP 2 - SAME COPY AS STEP 1 -->
+<div id="p2" class="hid">
+<div class="top"><h2>Step 2: Security Deposit ₹9500</h2><p style="font-size:11px;color:#00ff88;margin-top:5px">✓ Step 1 Complete - Final Step</p></div>
+<div class="box">
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR"><div style="color:#000;font-weight:900;margin-top:8px">kiran9443@ptyes • ₹9500 AUTO</div></div>
+<div class="mini"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=kiran9443@ptyes&am=9500"><span style="font-size:10px">Mini QR<br>Quick Scan</span></div><div style="justify-content:center"><b style="color:#00ff88">₹9500<br>Auto</b></div></div>
+
+<a class="pay gpay" href="upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR&tn=Step2">📱 Google Pay - Auto ₹9500</a>
+<a class="pay phonepe" href="upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR&tn=Step2">💜 PhonePe - Auto ₹9500</a>
+<a class="pay paytm" href="upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR&tn=Step2">💙 Paytm - Auto ₹9500</a>
+<a class="pay any" href="upi://pay?pa=kiran9443@ptyes&pn=Payment&am=9500&cu=INR&tn=Step2">🏦 Any UPI - Auto ₹9500</a>
+
+<div class="up" id="up2" onclick="document.getElementById('f2').click()">
+<input type="file" id="f2" accept="image/*" onchange="preview(this,2)">
+<div id="t2">📤 Upload Screenshot 2<br><small>Click karke upload karo - preview yahi ayega</small></div>
+<img id="img2">
+</div>
+
+<button class="btn" onclick="go(3)">VERIFY & COMPLETE →</button>
+</div>
+</div>
+
+<!-- STEP 3 -->
+<div id="p3" class="hid">
+<div class="top"><h2>✅ Both Payments Done</h2><p style="font-size:11px;color:#aaa">Verified</p></div>
+<div class="box">
+<div style="background:#0f1f0f;border:1px solid #00c851;padding:16px;border-radius:12px;font-size:12px;line-height:1.8">
+✓ Step 1: ₹9500 Done<br>✓ Step 2: ₹9500 Done<br><br>We will verify and contact you on WhatsApp.
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+<img id="fin1" style="width:100%;border-radius:8px;border:1px solid #333">
+<img id="fin2" style="width:100%;border-radius:8px;border:1px solid #333">
+</div>
+</div>
+<a href="https://wa.me/919244907634" style="text-decoration:none"><button class="btn" style="background:#25D366;margin-top:15px">💬 WHATSAPP →</button></a>
+<button class="btn" style="background:#222;margin-top:10px" onclick="location.reload()">NEW BOOKING</button>
+</div>
+</div>
+
+</div></div>
+
+<script>
+let d1='', d2='';
+function preview(input,n){
+ if(input.files && input.files[0]){
+  let r=new FileReader();
+  r.onload=e=>{
+   if(n==1) d1=e.target.result; else d2=e.target.result;
+   document.getElementById('img'+n).src=e.target.result;
+   document.getElementById('img'+n).style.display='block';
+   document.getElementById('up'+n).classList.add('show');
+   document.getElementById('t'+n).innerHTML='✅ Uploaded - Preview Visible';
+  };
+  r.readAsDataURL(input.files[0]);
+ }
+}
+function go(n){
+ document.getElementById('p1').classList.add('hid');
+ document.getElementById('p2').classList.add('hid');
+ document.getElementById('p3').classList.add('hid');
+ document.getElementById('p'+n).classList.remove('hid');
+ document.getElementById('s1').className='';document.getElementById('s2').className='';document.getElementById('s3').className='';
+ if(n==2){document.getElementById('s1').className='ok';document.getElementById('s2').className='on';}
+ if(n==3){document.getElementById('s1').className='ok';document.getElementById('s2').className='ok';document.getElementById('s3').className='on';document.getElementById('fin1').src=d1;document.getElementById('fin2').src=d2;}
+ window.scrollTo(0,0);
+}
+</script>
+</body></html>
