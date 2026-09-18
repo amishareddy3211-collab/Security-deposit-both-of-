@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin - Signature</title>
+<style>
+*{box-sizing:border-box}body{font-family:Inter,sans-serif;background:#050505;color:#fff;margin:0;padding:20px}
+.login{max-width:380px;margin:80px auto;background:#111;border:1px solid #222;padding:28px;border-radius:20px;text-align:center}
+.card{max-width:600px;margin:20px auto;background:#111;border:1px solid #222;border-radius:20px;padding:22px;display:none}
+h2{letter-spacing:3px;text-align:center}label{font-size:10px;color:#888;letter-spacing:1.5px;font-weight:800;display:block;margin:18px 0 6px}
+input{width:100%;padding:13px;border-radius:12px;border:1.5px solid #333;background:#0a0a0a;color:#fff;font-weight:700}
+.btn{width:100%;padding:14px;border:none;border-radius:12px;font-weight:900;cursor:pointer;margin-top:14px}
+.btn-red{background:#c70000;color:#fff}.btn-green{background:#00c851;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qr-preview{background:#fff;padding:14px;border-radius:14px;text-align:center;margin-top:10px}
+.qr-preview img{width:160px;height:160px}
+.status{background:#0a1f0a;border:1px solid #00c851;color:#00ff88;padding:12px;border-radius:12px;font-size:12px;margin-top:14px;display:none}
+</style></head><body>
+<div id="loginBox" class="login">
+<h2>ADMIN LOGIN</h2>
+<p style="color:#666;font-size:11px;margin:8px 0 16px">SIGNATURE SECURE ADMIN</p>
+<input id="pass" type="password" placeholder="Enter Admin Password">
+<button class="btn btn-red" onclick="login()">LOGIN</button>
+<p style="font-size:10px;color:#444;margin-top:12px">Default: signature123</p>
+</div>
+<div id="adminBox" class="card">
+<h2 style="color:#D9FF66">SIGNATURE ADMIN</h2>
+<label>1ST SECURITY - MADAM SECURITY (Page 1)</label>
+<div class="grid">
+<input id="amt1" value="9500"><input id="title1" value="Madam Security Deposit">
+</div>
+<label>2ND SECURITY - CUSTOMER SECURITY (Page 2)</label>
+<div class="grid">
+<input id="amt2" value="9500"><input id="title2" value="Customer Security Verification">
+</div>
+<label>UPI ID (Optional Update)</label>
+<input id="upi" value="kiran9443@ptyes">
+<label>WHATSAPP NUMBER (Optional)</label>
+<input id="wa" value="9244907634">
+<label>QR CODE - UPLOAD NEW QR (Optional)</label>
+<input type="file" id="qrFile" accept="image/*" onchange="readQR(this)">
+<div class="qr-preview"><img id="qrPrev" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=kiran9443@ptyes&am=9500"><p style="color:#111;font-size:10px;margin-top:8px;font-weight:800">QR Preview</p></div>
+<label>CHANGE ADMIN PASSWORD</label>
+<input id="newPass" placeholder="New password (optional)">
+<button class="btn btn-green" onclick="saveAll()">💾 SAVE & UPDATE LIVE</button>
+<button class="btn btn-red" onclick="resetAll()">RESET TO DEFAULT</button>
+<div id="status" class="status"></div>
+<div style="margin-top:20px;padding:14px;background:#0a0a0a;border-radius:12px;font-size:11px;color:#666;line-height:1.6">
+<b style="color:#fff">How it works:</b><br>
+• UPI/QR/Amount change → SAVE → Website auto updates<br>
+• Page 1: deposit.html = <span id="sAmt1">₹9500</span> (Madam)<br>
+• Page 2: deposit2.html = <span id="sAmt2">₹9500</span> (Customer)<br>
+• Customer sees new QR automatically
+</div>
+<button class="btn" style="background:#222;color:#fff;margin-top:20px" onclick="logout()">LOGOUT</button>
+</div>
+<script>
+const DEF={upi:"kiran9443@ptyes",wa:"9244907634",amt1:"9500",amt2:"9500",title1:"Madam Security Deposit",title2:"Customer Security Verification",qr:"",pass:"signature123"};
+function load(){
+ let s=JSON.parse
