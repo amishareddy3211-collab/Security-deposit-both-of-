@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signature - 3 Step Secure Payment</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:#080808;color:#fff}
+.hdr{background:#c70000;padding:12px;text-align:center;font-weight:900;letter-spacing:2px;font-size:10px;position:sticky;top:0;z-index:10}
+.steps{display:flex;background:#111;border-bottom:1px solid #222}
+.steps div{flex:1;text-align:center;padding:10px 2px;font-size:9px;font-weight:900;color:#555;border-bottom:3px solid #222}
+.steps div.on{color:#fff;border-bottom-color:#c70000;background:#1a0a0a}
+.steps div.ok{color:#00ff88;border-bottom-color:#00c851}
+.wrap{max-width:500px;margin:0 auto;background:#141414;min-height:100vh}
+.top{background:linear-gradient(135deg,#b00000,#ff2020);padding:22px;text-align:center}
+.box{padding:18px}
+.alert{background:#201010;border:1px solid #c70000;padding:12px;border-radius:12px;font-size:11px;line-height:1.6;color:#ffcccc}
+.lab{font-size:9px;font-weight:900;color:#777;letter-spacing:1.5px;margin:18px 0 8px;display:block}
+.qr-card{background:#fff;border-radius:16px;padding:14px;display:flex;gap:14px;align-items:center}
+.qr-card img{width:120px;height:120px;border-radius:10px;flex-shrink:0}
+.qr-info{color:#111;text-align:left}
+.qr-info b{font-size:13px;display:block}
+.qr-info span{font-size:11px;color:#444;display:block;margin-top:4px}
+.mini-qr{background:#0e0e0e;border:1px solid #2a2a2a;border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;margin-top:10px}
+.mini-qr img{width:50px;height:50px;border-radius:8px;background:#fff;padding:2px}
+.upi-line{display:flex;gap:8px;margin-top:10px}
+.upi-line input{flex:1;background:#0a0a0a;border:1.5px solid #333;color:#fff;padding:12px;border-radius:10px;font-weight:800;font-size:12px}
+.btn{border:none;padding:12px 16px;border-radius:10px;font-weight:900;cursor:pointer;font-size:11px}
+.btn-red{background:#c70000;color:#fff}.btn-dark{background:#222;color:#fff;border:1px solid #333}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pay-btn{padding:13px;border-radius:12px;border:1.5px solid #2a2a2a;background:#111;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:11px}
+.pay-btn:active{transform:scale(.97)}
+.upBox{border:2px dashed #c70000;background:#1a0f0f;border-radius:14px;padding:14px;text-align:center;margin-top:10px;position:relative}
+.upBox input{display:none}
+.upBox img{width:100%;max-height:260px;object-fit:contain;border-radius:10px;margin-top:10px;display:none;border:1px solid #333}
+.upBox.has img{display:block}
+.upBox.has .ph{display:none}
+.ph{font-size:11px;line-height:1.6}
+.cont{width:100%;padding:16px;background:#c70000;color:#fff;border:none;border-radius:12px;font-weight:900;margin-top:18px;font-size:13px;cursor:pointer}
+.hid{display:none}
+.okBox{background:#0a1f0a;border:1px solid #00c851;padding:14px;border-radius:12px;font-size:11px;color:#ccffdd;line-height:1.6}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.preview-grid img{width:100%;border-radius:10px;border:1px solid #333;max-height:220px;object-fit:contain}
+</style>
+</head>
+<body>
+<div class="hdr">SIGNATURE • 100% REFUNDABLE • kiran9443@ptyes</div>
+<div class="steps"><div id="st1" class="on">STEP 1<br>MADAM SECURITY</div><div id="st2">STEP 2<br>CUSTOMER SECURITY</div><div id="st3">STEP 3<br>BOOKING ACTIVE</div></div>
+<div class="wrap">
+
+<!-- STEP 1 -->
+<div id="p1">
+<div class="top"><h2>Step 1: Madam Security ₹9,500</h2><p style="font-size:11px;margin-top:6px;opacity:.9">100% Refundable • Instant Booking ID Verification</p></div>
+<div class="box">
+<div class="alert"><b>Why Pay Madam Security?</b> ✅ 100% Refundable after service • Booking ID activation • Safe & Secure by Signature Team</div>
+
+<span class="lab">UPI QR + MINI PREVIEW</span>
+<div class="qr-card">
+<img id="qr1" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=upi://pay?pa=kiran9443@ptyes%26pn=Signature%26am=9500%26cu=INR">
+<div class="qr-info"><b>₹9,500 - Madam Security</b><span>UPI: kiran9443@ptyes</span><span>Signature Secure Payment</span><span style="color:#c70000;font-weight:900;margin-top:6px">⬇ Auto Pay Below</span></div>
+</div>
+
+<div class="mini-qr">
+<img id="mini1" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=upi://pay?pa=kiran9443@ptyes%26am=9500">
+<div><b style="font-size:11px">Mini UPI QR</b><br><span style="font-size:10px;color:#888">Quick Scan • kiran9443@ptyes • ₹9500</span></div>
+<div style="margin-left:auto"><span style="font-size:9px;background:#c70000;padding:4px 8px;border-radius:20px;font-weight:900">AUTO ₹9500</span></div>
+</div>
+
+<span class="lab">
